@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>kalkulator</title>
+    <style>
+        #judul{
+            margin-top: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body class="pink">
+    <div class="container" id="judul">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                    <div class="card">
+                            <div class="card-body">
+                                    <div class="row">
+                                            <div class="col-md-12">
+                                                    <div  class="alert alert-primary" role="alert" >
+                                                        <div id="kotakmerah"></div>   
+                                                        <div></div>   
+                                                        <div></div>
+                                                        Kalkulator
+                                                    </div>
+                                            </div>     
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                        <form>
+                                                                <div class="form-group">
+                                                                  <label id="angka2" for="formGroupExampleInput">0</label>
+                                                                  <input  type="text" class="form-control" id="angka" value="">
+                                                                </div>
+                                                        </form>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col-md-3">
+                                                            <button onClick="tombolhapus()" class="btn btn-primary btn-block" type="button">CE</button>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                            <button onClick="tombolhapus()" class="btn btn-primary btn-block" type="button">C</button>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                            <button onClick="tekantombol('-')" class="btn btn-primary btn-block" type="button">-</button>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                            <button onClick="tekantombol('/')" class="btn btn-primary btn-block" type="button">/</button>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                                <button onclick="tekantombol(7)" class="btn btn-primary btn-block" type="button">7</button>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                                <button onclick="tekantombol(8)" class="btn btn-primary btn-block" type="button">8</button>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                                <button onclick="tekantombol(9)" class="btn btn-primary btn-block" type="button">9</button>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                                <button onClick="tekantombol('*')" class="btn btn-primary btn-block" type="button">x</button>
+                                                    </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                                    <button onclick="tekantombol(4)" class="btn btn-primary btn-block" type="button">4</button>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                                    <button onclick="tekantombol(5)" class="btn btn-primary btn-block" type="button">5</button>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                                    <button onclick="tekantombol(6)" class="btn btn-primary btn-block" type="button">6</button>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                                    <button onclick="tekantombol('-')" class="btn btn-primary btn-block" type="button">-</button>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                            <div class="col-md-3">
+                                                                        <button onClick="tekantombol(1)" class="btn btn-primary btn-block" type="button">1</button>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                        <button onClick="tekantombol(2)" class="btn btn-primary btn-block" type="button">2</button>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                        <button onClick="tekantombol(3)" class="btn btn-primary btn-block" type="button">3</button>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                        <button onClick="tekantombol('+')" class="btn btn-primary btn-block" type="button">+</button>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                    <div class="row">
+                                                            <div class="col-md-3">
+                                                                        <button onClick="tekantombol('-')" class="btn btn-primary btn-block" type="button">+/-</button>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                        <button onClick="tekantombol('0')" class="btn btn-primary btn-block" type="button">0</button>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                        <button onClick="tekantombol(',')" class="btn btn-primary btn-block" type="button">,</button>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                        <button onClick="hitung()" class="btn btn-primary btn-block" type="button">=</button>
+                                                            </div>
+                                                        </div>
+                            </div>
+                          </div>
+
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+    <script>
+        //Fungsi
+        var total="" 
+
+        var tombolhapus = function (){
+                total=""
+                var angka = document.getElementById("angka")
+                angka.value=total
+        }
+
+
+        var tekantombol = function memasukanAngka(varam1){
+                console.log(varam1)
+                var angka = document.getElementById("angka")
+                total= total+varam1
+                angka.value=total
+        }
+
+        var hitung = function hitung(){
+                var angka = document.getElementById("angka")
+                total=angka.value
+                angka.value=total
+        }
+    </script>
+</body>
+</html>

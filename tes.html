@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Script Pengingat</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+    </div>
+
+    <script>
+
+        // cara buat variable
+        var string = "" // string
+        var nomor = 0 // nomor
+        var decimal = 0.2 // decimal
+
+        // cara buat variable object / barang / item
+        var barang1 = {}
+        barang1.nama = "namabarang"
+        var barang2 = {
+            nama: "namabarang"
+        }
+
+        // cara buat array / lemari
+        var lemari = []
+        var lemari1 = ["1", "2", "3", "4"]
+        var lemari2 = [1,2,3,4]
+        var lemari3 = [{ nama: 1 }, { nama: 2}, { nama: 3 }]
+
+        // cara akses array
+        lemari1[1]
+        lemari1[1].nama 
+
+        // cara memasukan barang ke lemari / object ke array
+        lemari.push( {} )
+
+        // cara membuat fungsi 
+        var fungsi = function (){
+            alert("fungsi berjalan")
+        }
+        // cara panggil fungsi
+        fungsi()
+
+        // cara membuat fungsi dan parameter 
+        var fungsiPanggilNama = function (parameter1){
+            alert(parameter1)
+        }
+        fungsi("1") // string, integer, object, array 
+        
+        // contoh fungsi parameter
+        var panggilNamaSaya = function (firstName, lastName){
+            var nama = firstName + lastName
+        }
+        panggilNamaSaya("firstName", "lastName")
+
+        // contoh fungsi dengan object
+        var fullname = {
+            firstName: "1",
+            lastName: "2"
+        }
+        var secondName = {
+            alias: "asdasd"
+        }
+        var panggilNamaSaya2 = function(fullname, secondName){
+            var nama = fullname.firstName + fullname.lastName + secondName.alias
+            if(fullname.firstName == "1"){
+                nama = secondName.alias
+            }
+        }
+        panggilNamaSaya2(fullname, secondName)
+
+        // contoh fungsi di element
+        // onClick="namafungsi()"  onKeyPress="namafungsi()"  onChange="namafungsi()"
+
+        // looping 
+        var index = 0
+        var total = 5
+        while(index < total){
+
+            console.log("ULANG")
+
+            index++;            
+        }
+
+        // mapping
+        var c = [1,2,3,4,5]
+        c.map(function(index){
+            console.log(index)
+        })
+
+        // untuk mendapatkan element
+        // 1. buat identifikasi <header id="cc" />
+        // document.getElementById
+        // document.getElementsByClassName
+        // document.getElementsByTagName("header")
+
+        // untuk menyisipkan elemen <></>
+        // <header id="lol"></div>
+        var lemarix = [1,2,3,4,5]
+        lemarix.map((function (item){
+            var alertz = document.getElementsByClassName('alert')[0]
+            alertz.innerHTML += "<p>"+item+"</p>"
+        }))
+
+
+    </script>
+</body>
+</html>
